@@ -148,6 +148,8 @@ public class LoginScreen extends javax.swing.JFrame {
        th.start();
        
        
+       
+       
        if (Logged_In == true)
        {
            this.dispose();

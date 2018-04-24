@@ -530,6 +530,11 @@ public class RegistrationScreen extends javax.swing.JFrame {
             userInfoArray[10] = "noSentRequests";
             userInfoArray[11] = "noRecievedRequests";
             
+            this.dispose();
+            new msnMainScreen().setVisible(true);
+            
+                   
+            
             try    
             {
                 Socket server = new Socket ("localhost",9090);
