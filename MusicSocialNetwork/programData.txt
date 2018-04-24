@@ -1,0 +1,2 @@
+registrationRequest,1,1,1January1,1,1,Indie/RB/,URL1,null,noFriends,noSentRequests,noRecievedRequests,
+

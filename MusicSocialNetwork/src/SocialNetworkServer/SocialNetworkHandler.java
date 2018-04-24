@@ -98,7 +98,7 @@ public class SocialNetworkHandler {
                     for(int i=0;i<arrayLength;i++)
                         writeToFile +=inClientArray[i] + ",";
                     writeToFile += "\n";
-                    
+                    System.out.println(writeToFile);
                     try{
                     PrintWriter writeToTxtFile = new PrintWriter("programData.txt");
                     writeToTxtFile.println(writeToFile);

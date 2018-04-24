@@ -516,7 +516,7 @@ public class RegistrationScreen extends javax.swing.JFrame {
         else
         {
             JOptionPane.showMessageDialog(null, "Registration Successful");
-            String[] userInfoArray = new String[11];
+            String[] userInfoArray = new String[12];
             userInfoArray[0] = "registrationRequest";
             userInfoArray[1] = name_Input1.getText();
             userInfoArray[2] = password_Input.getText();
@@ -530,34 +530,33 @@ public class RegistrationScreen extends javax.swing.JFrame {
             userInfoArray[10] = "noSentRequests";
             userInfoArray[11] = "noRecievedRequests";
             
-        try    
-        {
-            Socket server = new Socket ("localhost",9999);
-            
-            ObjectOutputStream outToServer = new ObjectOutputStream(server.getOutputStream());
-            outToServer.writeObject(userInfoArray);
-            
-            
-        } catch (IOException e)
-        {
-            JOptionPane.showMessageDialog(null,"Failed");   
-        }
+            try    
+            {
+                Socket server = new Socket ("localhost",9090);
 
+                ObjectOutputStream outToServer = new ObjectOutputStream(server.getOutputStream());
+                outToServer.writeObject(userInfoArray);
+
+
+            } catch (IOException e)
+            {
+                JOptionPane.showMessageDialog(null,"Failed");   
+            }
         }
             
       
-        //0 - request name
-        //1 - username
-        //2 - password
-        //3 - DOB (all joined into one string)
-        //4 - place of birth
-        //5 - place of residence
-        //6 - faviourite genres (all joined into one string, seperate via a \)
-        //7 - picture URl
-        //8 - Music file location ---------
-        //9 - friends                     |
-        //10 - recieved friend request    | --- join multiple ones of their own type into one
-        //11 - sent friend requests -------
+            //0 - request name
+            //1 - username
+            //2 - password
+            //3 - DOB (all joined into one string)
+            //4 - place of birth
+            //5 - place of residence
+            //6 - faviourite genres (all joined into one string, seperate via a \)
+            //7 - picture URl
+            //8 - Music file location ---------
+            //9 - friends                     |
+            //10 - recieved friend request    | --- join multiple ones of their own type into one
+            //11 - sent friend requests -------
     }//GEN-LAST:event_register_ButtonActionPerformed
 
     private void name_Input1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_Input1ActionPerformed
