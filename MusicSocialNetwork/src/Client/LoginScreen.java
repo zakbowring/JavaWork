@@ -5,6 +5,11 @@
  */
 package Client;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author zakbo
@@ -128,7 +133,10 @@ public class LoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_username_Input_TextActionPerformed
 
     private void login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_ButtonActionPerformed
-        // TODO add your handling code here:
+       String[] login = new String[3];
+       login[0] = "loginRequest";
+       login[1] = username_Input_Text.getText();
+       login[2] = password_Input_Text.getText();
     }//GEN-LAST:event_login_ButtonActionPerformed
 
     private void register_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_ButtonActionPerformed
@@ -180,4 +188,51 @@ public class LoginScreen extends javax.swing.JFrame {
     private javax.swing.JTextField username_Input_Text;
     private javax.swing.JLabel username_Text;
     // End of variables declaration//GEN-END:variables
+}
+
+
+class serverCode implements Runnable
+{
+    String[] login = new String[3];
+    
+    public serverCode (String[]_login) 
+    {
+        login = _login;
+    }
+    
+    public void run() 
+    {
+        try (Socket server = new Socket ("localhost",9090);)
+        {
+            JOptionPane.showMessageDialog(null,"Attempting Login...");
+            ObjectOutputStream outToServer = new ObjectOutputStream(server.getOutputStream());
+            outToServer.writeObject(login);
+            JOptionPane.showConfirmDialog(null, "Attempting to recieve data from server");
+            ObjectInputStream inFromServer = new ObjectInputStream(server.getInputStream());
+            
+            try
+            {
+                String[] text = (String[]) inFromServer.readObject();
+                
+                ObjectOutputStream outToServer2 = new ObjectOutputStream(server.getOutputStream());
+                if ("loginRequest".equals(text[0]))
+                {
+                    LoginScreen.Logged_In = true;
+                    outToServer2.writeObject(text);
+                    
+                }
+               
+            } catch (ClassNotFoundException d) 
+            {
+            }
+            server.close();
+            
+        
+            
+        } catch (IOException e) 
+        {
+            JOptionPane.showMessageDialog(null,"login error caught");
+        }
+    }
+    
 }
