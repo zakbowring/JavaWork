@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package Client;
-
-import java.io.IOException;
+import java.net.*;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.JOptionPane;
@@ -13,6 +12,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author zakbo
+import java.io.IOExceptio
  */
 public class LoginScreen extends javax.swing.JFrame {
     /**
