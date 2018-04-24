@@ -73,8 +73,8 @@ public class SocialNetworkHandler {
                         else if(isUserFound == true && isLoginSuccessful == true)//Username and password correct
                         {
                             JOptionPane.showMessageDialog(null, "Login Successful");
-                            outToClient.writeObject(retrieveUserAccount(fileLocation, 11, typed_Username));
-                           //11 - The no of info each user has in programData
+                            outToClient.writeObject(retrieveUserAccount(fileLocation, 12, typed_Username));
+                           //12 - The no of info each user has in programData
                         }      
                     }catch(Exception e)
                     {

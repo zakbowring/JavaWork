@@ -493,6 +493,22 @@ public class RegistrationScreen extends javax.swing.JFrame {
         }
         
             
+        
+        
+        
+        
+        //0 - request name
+        //1 - username
+        //2 - password
+        //3 - DOB (all joined into one string)
+        //4 - place of birth
+        //5 - place of residence
+        //6 - faviourite genres (all joined into one string, seperate via a \)
+        //7 - picture URl
+        //8 - Music file location ---------
+        //9 - friends                     |
+        //10 - recieved friend request    | --- join multiple ones of their own type into one
+        //11 - sent friend requests -------
     }//GEN-LAST:event_register_ButtonActionPerformed
 
     private void name_Input1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_Input1ActionPerformed
