@@ -532,7 +532,18 @@ public class RegistrationScreen extends javax.swing.JFrame {
             userInfoArray[10] = "noSentRequests";
             userInfoArray[11] = "noRecievedRequests";
             
+        try    
+        {
+            Socket server = new Socket ("localhost",9999);
             
+            ObjectOutputStream outToServer = new ObjectOutputStream(server.getOutputStream());
+            outToServer.writeObject(userInfoArray);
+            
+            
+        } catch (IOException e)
+        {
+            JOptionPane.showMessageDialog(null,"Failed");   
+        }
 
         }
             
