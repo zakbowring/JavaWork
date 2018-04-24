@@ -40,27 +40,18 @@
                                   <Component id="preffered_Music_Genre_Text" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="password_Text" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="dob_Day_Input" min="-2" pref="31" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="dob_Month_Input" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="dob_Year_Input" min="-2" pref="54" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="place_Of_Residence_Input" min="-2" pref="115" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="name_Input1" min="-2" pref="115" max="-2" attributes="0"/>
-                                          <Component id="password_Input" min="-2" pref="115" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="dob_Day_Input" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="dob_Month_Input" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="dob_Year_Input" min="-2" pref="54" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="place_Of_Residence_Input" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="password_Input" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="name_Input1" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
