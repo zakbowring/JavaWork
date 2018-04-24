@@ -479,13 +479,11 @@ public class RegistrationScreen extends javax.swing.JFrame {
         else
             genre = null;
         
-        if(dob_Day_Input.getText().isEmpty() || dob_Year_Input.getText().isEmpty() == true)
+        if(dob_Day_Input.getText().isEmpty() || dob_Year_Input.getText().isEmpty() == false)
         {
             //Runs if either DOB entry is empty
             isDobSelected = true;
         }
-        
-        
         
         if(indie_Check.isSelected() == true)
             genre += "Indie/";
@@ -508,9 +506,9 @@ public class RegistrationScreen extends javax.swing.JFrame {
         if(techno_Check.isSelected() == true)
             genre += "Techno/";
         
-        System.out.println(genre);
         
-        if(password_Input.getText().isEmpty() || place_Of_Birth_Input.getText().isEmpty() || place_Of_Residence_Input.getText().isEmpty() || anyCheckSelected == false || isDobSelected == false )
+        
+        if((password_Input.getText().isEmpty() || place_Of_Birth_Input.getText().isEmpty() || place_Of_Residence_Input.getText().isEmpty() == true) || anyCheckSelected == false || isDobSelected == false )
         //Put in a check to make sure all fields are in use
         {
             JOptionPane.showMessageDialog(null, "Registration Unsuccessful, ensure all fields are filled in.");
