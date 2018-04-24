@@ -75,9 +75,11 @@ public class SocialNetworkHandler {
                         else if(isUserFound == true && isLoginSuccessful == true)//Username and password correct
                         {
                             JOptionPane.showMessageDialog(null, "Login Successful");
+                         
                             //DataOutputStream outToClient = new DataOutputStream(client.getOutputStream());  //Sets a stream to use to send data to the client
                             //ObjectOutputStream output = new ObjectOutputStream();
-                            outToClient.writeBoolean(true);
+                            outToClient.
+                            
                             
                             //outToClient.writeUTF(lineOfText);
                             //outToClient.writeObject(retrieveUserAccount(fileLocation, 12, typed_Username));

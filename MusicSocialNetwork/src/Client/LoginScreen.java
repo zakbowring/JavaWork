@@ -228,8 +228,10 @@ class serverCode implements Runnable
             JOptionPane.showMessageDialog(null,"Attempting Login...");
             ObjectOutputStream outToServer = new ObjectOutputStream(server.getOutputStream());
             outToServer.writeObject(login);
-            JOptionPane.showConfirmDialog(null, "Attempting to recieve data from server");
+            JOptionPane.showMessageDialog(null, "Attempting to recieve data from server");
             ObjectInputStream inFromServer = new ObjectInputStream(server.getInputStream());
+            
+        
             
             boolean test = inFromServer.readBoolean();
             if(test==true)
