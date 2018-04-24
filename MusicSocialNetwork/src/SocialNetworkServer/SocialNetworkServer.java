@@ -4,33 +4,27 @@
  * and open the template in the editor.
  */
 package SocialNetworkServer;
+import java.io.IOException;
 import java.net.*;
 /**
  *
  * @author zakbo
  */
 public class SocialNetworkServer {
-    
-    public SocialNetworkServer()
-    {
-        
-    }
-    public static void main(String args[]){
-        try{
-            ServerSocket SNServer = new ServerSocket(9999);
-            System.out.println("Waiting for client...");
-            Socket client = SNServer.accept();
-            System.out.println("Client" + client.getInetAddress() + "connected");
-            InetAddress address = InetAddress.getLocalHost(); 
-            String IpAdress = address.getHostAddress();
-           
-    } catch(Exception e)
-    {
-        System.out.println("error");
+   public static void main(String[] args) throws IOException {        
+        ServerSocket server = new ServerSocket(9090);
+        while (true) {
+            System.out.println("Waiting for connection...");
+            Socket client = server.accept();
+            System.out.println("Client " + client.getInetAddress() + " connected!");
+            //assign each client to a thread
+            SocialNetworkHandler t = new SocialNetworkHandler(client);
+//            Thread th = new Thread(t);
+//            th.start();
+         }
     }
            
            
-}
 }
     
 
