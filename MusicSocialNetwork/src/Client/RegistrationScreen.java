@@ -525,9 +525,9 @@ public class RegistrationScreen extends javax.swing.JFrame {
             userInfoArray[3] = dob_Day_Input.getText() + dob_Month_Input.getSelectedItem() + dob_Year_Input.getText();
             userInfoArray[4] = place_Of_Birth_Input.getText();
             userInfoArray[5] = place_Of_Residence_Input.getText();
-            userInfoArray[6] = //Favorite Genres
+            userInfoArray[6] = genre;
             userInfoArray[7] = URL_Text.getText();
-            userInfoArray[8] = // Music File Location
+            userInfoArray[8] = null;
             userInfoArray[9] = "noFriends";
             userInfoArray[10] = "noSentRequests";
             userInfoArray[11] = "noRecievedRequests";
