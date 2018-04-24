@@ -1,4 +1,6 @@
-package music.scoial.network; // Used to access all other classes
+package SocialNetworkServer;
+
+ // Used to access all other classes
 
 import java.net.*; //Allows us to create server
 /**
