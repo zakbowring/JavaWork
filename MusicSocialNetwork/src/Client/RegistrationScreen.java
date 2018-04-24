@@ -32,7 +32,7 @@ public class RegistrationScreen extends javax.swing.JFrame {
 
         registration_Text = new javax.swing.JLabel();
         name_Text = new javax.swing.JLabel();
-        name_Input = new javax.swing.JTextField();
+        password_Input = new javax.swing.JTextField();
         place_Of_Birth_Text = new javax.swing.JLabel();
         place_Of_Birth_Input = new javax.swing.JTextField();
         date_Of_Birth_Text = new javax.swing.JLabel();
@@ -57,6 +57,8 @@ public class RegistrationScreen extends javax.swing.JFrame {
         URL_Text = new javax.swing.JTextField();
         register_Button = new javax.swing.JButton();
         cancel_Button = new javax.swing.JButton();
+        password_Text = new javax.swing.JLabel();
+        name_Input1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,12 +66,12 @@ public class RegistrationScreen extends javax.swing.JFrame {
         registration_Text.setText("Registration");
 
         name_Text.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        name_Text.setText("Name:");
+        name_Text.setText("UserName:");
 
-        name_Input.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        name_Input.addActionListener(new java.awt.event.ActionListener() {
+        password_Input.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        password_Input.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                name_InputActionPerformed(evt);
+                password_InputActionPerformed(evt);
             }
         });
 
@@ -231,6 +233,16 @@ public class RegistrationScreen extends javax.swing.JFrame {
             }
         });
 
+        password_Text.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        password_Text.setText("Password:");
+
+        name_Input1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        name_Input1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                name_Input1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -246,21 +258,26 @@ public class RegistrationScreen extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(name_Text)
-                                    .addComponent(place_Of_Birth_Text)
                                     .addComponent(date_Of_Birth_Text)
                                     .addComponent(place_Of_Residence_Text)
-                                    .addComponent(preffered_Music_Genre_Text))
-                                .addGap(34, 34, 34)
+                                    .addComponent(preffered_Music_Genre_Text)
+                                    .addComponent(password_Text))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(place_Of_Birth_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(name_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(dob_Day_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dob_Month_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dob_Year_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(place_Of_Residence_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(34, 34, 34)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(dob_Day_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(dob_Month_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(dob_Year_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(place_Of_Residence_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(44, 44, 44)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(name_Input1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(password_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(indie_Check)
@@ -279,13 +296,18 @@ public class RegistrationScreen extends javax.swing.JFrame {
                                         .addComponent(rb_Check)
                                         .addGap(70, 70, 70)
                                         .addComponent(techno_Check)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(profile_Picture_Check)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(upload_Picture_Button))
+                        .addComponent(URL_Text))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(profile_Picture_Check)
+                        .addComponent(place_Of_Birth_Text)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(upload_Picture_Button))
-                    .addComponent(URL_Text))
+                        .addComponent(place_Of_Birth_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(104, 104, 104))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -306,23 +328,25 @@ public class RegistrationScreen extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name_Text)
-                    .addComponent(name_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(URL_Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(URL_Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name_Input1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(place_Of_Birth_Text)
-                    .addComponent(place_Of_Birth_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password_Text)
+                    .addComponent(password_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(date_Of_Birth_Text)
                     .addComponent(dob_Day_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dob_Month_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dob_Year_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dob_Year_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(place_Of_Birth_Text)
+                    .addComponent(place_Of_Birth_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(place_Of_Residence_Text)
                     .addComponent(place_Of_Residence_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(preffered_Music_Genre_Text)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -346,15 +370,15 @@ public class RegistrationScreen extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(register_Button)
                     .addComponent(cancel_Button))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void name_InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_InputActionPerformed
+    private void password_InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_InputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_name_InputActionPerformed
+    }//GEN-LAST:event_password_InputActionPerformed
 
     private void place_Of_Birth_InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_place_Of_Birth_InputActionPerformed
         // TODO add your handling code here:
@@ -463,7 +487,7 @@ public class RegistrationScreen extends javax.swing.JFrame {
             isDobSelected = true;
         }
         
-        if(name_Input.getText().isEmpty() || place_Of_Birth_Input.getText().isEmpty() || place_Of_Residence_Input.getText().isEmpty() || anyCheckSelected == false || isDobSelected == false )
+        if(password_Input.getText().isEmpty() || place_Of_Birth_Input.getText().isEmpty() || place_Of_Residence_Input.getText().isEmpty() || anyCheckSelected == false || isDobSelected == false )
         //Put in a check to make sure all fields are in use
         {
             JOptionPane.showMessageDialog(null, "Registration Unsuccessful, ensure all fields are filled in.");
@@ -475,6 +499,10 @@ public class RegistrationScreen extends javax.swing.JFrame {
         
             
     }//GEN-LAST:event_register_ButtonActionPerformed
+
+    private void name_Input1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_Input1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_name_Input1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -529,9 +557,11 @@ public class RegistrationScreen extends javax.swing.JFrame {
     private javax.swing.JTextField dob_Year_Input;
     private javax.swing.JCheckBox grime_Check;
     private javax.swing.JCheckBox indie_Check;
-    private javax.swing.JTextField name_Input;
+    private javax.swing.JTextField name_Input1;
     private javax.swing.JLabel name_Text;
     private javax.swing.JCheckBox opera_Check;
+    private javax.swing.JTextField password_Input;
+    private javax.swing.JLabel password_Text;
     private javax.swing.JTextField place_Of_Birth_Input;
     private javax.swing.JLabel place_Of_Birth_Text;
     private javax.swing.JTextField place_Of_Residence_Input;

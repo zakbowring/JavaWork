@@ -14,9 +14,9 @@ import javax.swing.JOptionPane;
  */
 public class SocialNetworkHandler {
     Socket client; //Sets up a socket to reference in the handler
-    ObjectOutputStream outToClient;
+    ObjectOutputStream outToClient; //Sets a stream to use to send data to the client
     
-    public SocialNetworkHandler(Socket _socketClient){
+    public SocialNetworkHandler(Socket _socketClient){ //Constructor (Socket is the one the server is running)
     client = _socketClient; //Sets the socket that the server is using
 }
     
@@ -26,7 +26,7 @@ public class SocialNetworkHandler {
             //This takes any information in that the client sends to the server
             ObjectInputStream inFromClient = new ObjectInputStream(client.getInputStream());
             try{
-                String[] inClientArray = (String[]) inFromClient.readObject();
+                String[] inClientArray = (String[]) inFromClient.readObject(); //Stores data from client in an array
                 String userInformationFile = "programData.txt"; //The filename
                 String fileDirectory = "programData\\"; //Where the file is in the directory
                 
@@ -37,46 +37,43 @@ public class SocialNetworkHandler {
                     try{
                         FileReader fileIn = new FileReader(fileLocation);
                         BufferedReader reader = new BufferedReader(fileIn);
+
+                        boolean isUserFound = false; //Is there a matching username
+                        boolean isLoginSuccessful = false; //Is password correct
                         
-                        int numberOfProfiles = no_Of_Lines(fileLocation);
-                        int currentLineCheck = 1;
-                        boolean isUserFound = false;
-                        boolean isLoginSuccessful = false;
-                        
-                        String lineOfText = ""; //Signifies a line of text
-                        String typed_Username = inClientArray[1];
-                        String typed_Password = inClientArray[2];
-                        String userNameFound = "failed";
+                        String lineOfText = ""; //Signifies a line of text in the .txt
+                        String typed_Username = inClientArray[1]; //What the user entered in username
+                        String typed_Password = inClientArray[2]; //What the user entered in password
                         
                         while((lineOfText = reader.readLine()) != null) //Why'll there's still a line to read
                         {
+                            //StringTokenizer is used to split a string into individual variables
+                            //In this case we've used "," to show where variables begin/end
                             StringTokenizer st = new StringTokenizer(lineOfText, ",");
-                            String tempName = st.nextToken().trim();
+                            String tempName = st.nextToken().trim(); //First variable on line
                             if(typed_Username.equals(tempName))
                             {
-                                isUserFound = true;
-                                String tempPassword = st.nextToken().trim();
+                                isUserFound = true; //Username match
+                                String tempPassword = st.nextToken().trim(); //Second variable on line
                                 if(typed_Password.equals(tempPassword))
                                 {
-                                    isLoginSuccessful = true;
-                                    userNameFound = tempName;
+                                    isLoginSuccessful = true; //Username and password matches
                                 }
                                 else
-                                    isLoginSuccessful = false;
-                                break;
+                                    isLoginSuccessful = false; //Username right, password incorrect
+                                //break; -->Removed, not neccessary
                             }
-                            currentLineCheck ++;
                         }
                         
                         //Below are thee outcomes of the login attempt
-                        if(isUserFound == false)
+                        if(isUserFound == false) //Username doesn't exist
                             JOptionPane.showMessageDialog(null, "Username is not found");
-                        else if((isUserFound == true) && (isLoginSuccessful == false))
+                        else if((isUserFound == true) && (isLoginSuccessful == false)) //Username found, password incorrect
                             JOptionPane.showMessageDialog(null, "Incorrect Password");
-                        else if(isUserFound == true && isLoginSuccessful == true)
+                        else if(isUserFound == true && isLoginSuccessful == true)//Username and password correct
                         {
                             JOptionPane.showMessageDialog(null, "Login Successful");
-                            outToClient.writeObject(retrieve_file_record_byname(fileLocation, 11, typed_Username));
+                            outToClient.writeObject(retrieveUserAccount(fileLocation, 11, typed_Username));
                         }      
                     }catch(Exception e)
                     {
@@ -114,7 +111,7 @@ public class SocialNetworkHandler {
     
     
     
-    public String[] retrieve_file_record_byname(String input_filename ,int input_record_length, String input_username)
+    public String[] retrieveUserAccount(String input_filename ,int input_record_length, String input_username)
     {
         String[] retrieved_record = new String[input_record_length];
         retrieved_record[0] = "HndlMain";
