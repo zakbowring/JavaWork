@@ -19,8 +19,9 @@ public class SocialNetworkServer {
             System.out.println("Client " + client.getInetAddress() + " connected!");
             //assign each client to a thread
             SocialNetworkHandler t = new SocialNetworkHandler(client);
-//            Thread th = new Thread(t);
-//            th.start();
+            t.runServer();
+            
+            
          }
     }
            
