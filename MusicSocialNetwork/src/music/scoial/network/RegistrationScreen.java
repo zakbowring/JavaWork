@@ -4,6 +4,7 @@ package music.scoial.network; //Allows access to other classes
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
+import java.net.*; //Alllows creation of server
 
 /**
  *
@@ -431,6 +432,8 @@ public class RegistrationScreen extends javax.swing.JFrame {
             System.out.println(selectedFile.getAbsoluteFile());
             URL_Text.setText(selectedFile.getAbsolutePath());
         }
+        
+        //send to server
     }//GEN-LAST:event_upload_Picture_ButtonActionPerformed
 
     private void URL_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_URL_TextActionPerformed
@@ -487,7 +490,14 @@ public class RegistrationScreen extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(RegistrationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        try
+        {
+        Socket test = new Socket("127.0.0.1", 3000);
+        System.out.println("worked");
+        }catch(Exception e){
+            System.out.println("error1");
+        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
