@@ -490,13 +490,25 @@ public class RegistrationScreen extends javax.swing.JFrame {
         else
         {
             JOptionPane.showMessageDialog(null, "Registration Successful");
-        }
-        
+            String[] userInfoArray = new String[11];
+            userInfoArray[0] = "registrationRequest";
+            userInfoArray[1] = name_Input1.getText();
+            userInfoArray[2] = password_Input.getText();
+            userInfoArray[3] = dob_Day_Input.getText() + dob_Month_Input.getSelectedItem() + dob_Year_Input.getText();
+            userInfoArray[4] = place_Of_Birth_Input.getText();
+            userInfoArray[5] = place_Of_Residence_Input.getText();
+            userInfoArray[6] = //Favorite Genres
+            userInfoArray[7] = URL_Text.getText();
+            userInfoArray[8] = // Music File Location
+            userInfoArray[9] = "noFriends";
+            userInfoArray[10] = "noSentRequests";
+            userInfoArray[11] = "noRecievedRequests";
             
-        
-        
-        
-        
+            
+
+        }
+            
+      
         //0 - request name
         //1 - username
         //2 - password

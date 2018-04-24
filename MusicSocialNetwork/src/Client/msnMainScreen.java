@@ -46,13 +46,13 @@ public class msnMainScreen extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        current_Friends = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
+        sent_Friend_Requests = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
+        recieved_Friend_Requests = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,21 +108,21 @@ public class msnMainScreen extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        current_Friends.setColumns(20);
+        current_Friends.setRows(5);
+        jScrollPane3.setViewportView(current_Friends);
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
         jScrollPane4.setViewportView(jTextArea4);
 
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane5.setViewportView(jTextArea5);
+        sent_Friend_Requests.setColumns(20);
+        sent_Friend_Requests.setRows(5);
+        jScrollPane5.setViewportView(sent_Friend_Requests);
 
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jScrollPane6.setViewportView(jTextArea6);
+        recieved_Friend_Requests.setColumns(20);
+        recieved_Friend_Requests.setRows(5);
+        jScrollPane6.setViewportView(recieved_Friend_Requests);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -288,6 +288,7 @@ public class msnMainScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accept_Button;
     private javax.swing.JButton chat_Button;
+    private javax.swing.JTextArea current_Friends;
     private javax.swing.JButton decline_Button;
     private javax.swing.JLabel friends_Text;
     private javax.swing.JLabel information_Text;
@@ -304,13 +305,12 @@ public class msnMainScreen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
     private javax.swing.JButton play_Button;
     private javax.swing.JTextField post_Input;
+    private javax.swing.JTextArea recieved_Friend_Requests;
     private javax.swing.JButton requestFriendship_Button;
     private javax.swing.JButton send_Button;
+    private javax.swing.JTextArea sent_Friend_Requests;
     // End of variables declaration//GEN-END:variables
 }
