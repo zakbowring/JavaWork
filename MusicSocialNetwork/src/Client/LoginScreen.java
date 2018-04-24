@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import java.io.IOExceptio
  */
 public class LoginScreen extends javax.swing.JFrame {
+    static boolean Logged_In = false;
     /**
      * Creates new form LoginScreen
      */
@@ -137,6 +138,18 @@ public class LoginScreen extends javax.swing.JFrame {
        login[0] = "loginRequest";
        login[1] = username_Input_Text.getText();
        login[2] = password_Input_Text.getText();
+       
+       serverCode t = new serverCode(login);
+       Thread th = new Thread(t);
+       th.start();
+       
+       
+       if (Logged_In == true)
+       {
+           this.dispose();
+           new msnMainScreen().setVisible(true);
+           
+       }
     }//GEN-LAST:event_login_ButtonActionPerformed
 
     private void register_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_ButtonActionPerformed
