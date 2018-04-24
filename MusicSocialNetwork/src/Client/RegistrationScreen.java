@@ -6,6 +6,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.net.*; //Alllows creation of server
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -462,7 +463,17 @@ public class RegistrationScreen extends javax.swing.JFrame {
             isDobSelected = true;
         }
         
+        if(name_Input.getText().isEmpty() || place_Of_Birth_Input.getText().isEmpty() || place_Of_Residence_Input.getText().isEmpty() || anyCheckSelected == false || isDobSelected == false )
         //Put in a check to make sure all fields are in use
+        {
+            JOptionPane.showMessageDialog(null, "Registration Unsuccessful, ensure all fields are filled in.");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Registration Successful");
+        }
+        
+            
     }//GEN-LAST:event_register_ButtonActionPerformed
 
     /**
