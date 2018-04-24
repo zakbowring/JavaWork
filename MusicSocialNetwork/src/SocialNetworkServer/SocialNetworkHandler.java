@@ -78,17 +78,17 @@ public class SocialNetworkHandler {
                         }      
                     }catch(Exception e)
                     {
-                        System.out.println("Error --> " + e.getMessage());
+                        System.out.println("Error --1> " + e.getMessage());
                     }
                 }
                 
             }catch(ClassNotFoundException classError)
             {
-                System.out.println("Error --> " + classError.getMessage());
+                System.out.println("Error --2> " + classError.getMessage());
             }
         }catch(IOException error)
         { //This will catch any errors in the IO
-            System.out.println("Error --> " + error.getMessage());
+            System.out.println("Error --3> " + error.getMessage());
         }
     }
     
@@ -104,7 +104,7 @@ public class SocialNetworkHandler {
             reader.close(); //Closes reader
         }catch(IOException error) //If ther's an error in the input of the file
         {
-            System.out.println("Error --> "+ error); //State error message
+            System.out.println("Error --4> "+ error); //State error message
         }
         
         return no_Of_Lines; //Return final count

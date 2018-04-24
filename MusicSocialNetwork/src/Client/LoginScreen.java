@@ -9,6 +9,8 @@ import java.net.*;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.JOptionPane;
+import java.io.PrintWriter;
+import java.io.*;
 
 /**
  *
@@ -17,6 +19,7 @@ import java.io.IOExceptio
  */
 public class LoginScreen extends javax.swing.JFrame {
     static boolean Logged_In = false;
+    
     /**
      * Creates new form LoginScreen
      */
@@ -151,6 +154,8 @@ public class LoginScreen extends javax.swing.JFrame {
            new msnMainScreen().setVisible(true);
            
        }
+       
+       
     }//GEN-LAST:event_login_ButtonActionPerformed
 
     private void register_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_ButtonActionPerformed
@@ -248,5 +253,5 @@ class serverCode implements Runnable
             JOptionPane.showMessageDialog(null,"login error caught");
         }
     }
-    
+
 }
