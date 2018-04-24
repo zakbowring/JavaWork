@@ -20,8 +20,6 @@ public class SocialNetworkServer {
             //assign each client to a thread
             SocialNetworkHandler t = new SocialNetworkHandler(client);
             t.runServer();
-            
-            
          }
     }
            

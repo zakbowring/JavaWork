@@ -56,7 +56,7 @@ public class SocialNetworkHandler {
                             {
                                 isUserFound = true;
                                 String tempPassword = st.nextToken().trim();
-                                if(typed_Username.equals(tempPassword))
+                                if(typed_Password.equals(tempPassword))
                                 {
                                     isLoginSuccessful = true;
                                     userNameFound = tempName;
@@ -71,11 +71,12 @@ public class SocialNetworkHandler {
                         //Below are thee outcomes of the login attempt
                         if(isUserFound == false)
                             JOptionPane.showMessageDialog(null, "Username is not found");
-                        else if((isUserFound == true) && (isLoginSuccessful = false))
+                        else if((isUserFound == true) && (isLoginSuccessful == false))
                             JOptionPane.showMessageDialog(null, "Incorrect Password");
-                        else if(isUserFound && isLoginSuccessful == true)
+                        else if(isUserFound == true && isLoginSuccessful == true)
                         {
                             JOptionPane.showMessageDialog(null, "Login Successful");
+                            outToClient.writeObject(retrieve_file_record_byname(fileLocation, 11, typed_Username));
                         }      
                     }catch(Exception e)
                     {
@@ -110,4 +111,43 @@ public class SocialNetworkHandler {
         
         return no_Of_Lines; //Return final count
     }
+    
+    
+    
+    public String[] retrieve_file_record_byname(String input_filename ,int input_record_length, String input_username)
+    {
+        String[] retrieved_record = new String[input_record_length];
+        retrieved_record[0] = "HndlMain";
+        
+
+            try{
+            BufferedReader reader = new BufferedReader(new FileReader(input_filename));
+            String line;
+            int i = 0;
+            StringTokenizer myTokens; //Initialize
+            
+            while ((line = reader.readLine()) != null){//start loop
+                myTokens = new StringTokenizer(line, ","); //Create tokens out of the retrieved line
+                String tempName = myTokens.nextToken().trim();
+                if (input_username.equals(tempName)) //If the name being searched for equals the token (stored username)
+                {
+                    for (int j = 0; j < retrieved_record.length; j++) //Populate the array
+                        {
+                            retrieved_record[j] = myTokens.nextToken().trim(); //Get all the tokens out
+                        }
+                    break; //break out of the loop since the collect username has been found
+                }//endif
+          
+            } //endloop
+            
+            }//end try
+            catch (IOException e) 
+            {
+            System.err.println("Error! - " + e.getMessage());       
+        }
+        
+        return retrieved_record;
+    }
 }
+
+
