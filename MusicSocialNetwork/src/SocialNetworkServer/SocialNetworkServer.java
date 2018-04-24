@@ -10,7 +10,6 @@ package SocialNetworkServer;
  * @author zakbo
  */
 public class SocialNetworkServer extends javax.swing.JFrame {
-    
     static boolean isServerOnline = false; //Is the server online
     /**
      * Creates new form SocialNetworkServer
@@ -79,6 +78,7 @@ public class SocialNetworkServer extends javax.swing.JFrame {
 
     private void launch_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_launch_ButtonActionPerformed
         isServerOnline = true;
+        System.out.println("button");
     }//GEN-LAST:event_launch_ButtonActionPerformed
 
    
@@ -113,9 +113,10 @@ public class SocialNetworkServer extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SocialNetworkServer().setVisible(true);
+                serverCode serverRun = new serverCode();
+                serverRun.run();
             }
         });
-        
         
         
 //        } try
@@ -140,4 +141,18 @@ public class SocialNetworkServer extends javax.swing.JFrame {
     private javax.swing.JLabel title_Text;
     // End of variables declaration//GEN-END:variables
    
+}
+
+class serverCode implements Runnable{
+    public serverCode(){
+    
+}
+    public void run()
+    {
+        if(SocialNetworkServer.isServerOnline == true)
+        {
+            System.out.println("qwerty");
+        }
+    }
+        
 }
