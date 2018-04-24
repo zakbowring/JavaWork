@@ -13,11 +13,12 @@ import javax.swing.JOptionPane;
  * @author zakbo
  */
 public class SocialNetworkHandler {
-    Socket client; //Sets up a socket to reference in the handler
-    ObjectOutputStream outToClient; //Sets a stream to use to send data to the client
+    Socket client; //Sets up a socket to reference in the handle
+    ObjectOutputStream outToClient;
     
-    public SocialNetworkHandler(Socket _socketClient){ //Constructor (Socket is the one the server is running)
+    public SocialNetworkHandler(Socket _socketClient)throws IOException{ //Constructor (Socket is the one the server is running)
     client = _socketClient; //Sets the socket that the server is using
+    outToClient = new ObjectOutputStream(client.getOutputStream());   
 }
     
     public void runServer()
@@ -73,8 +74,14 @@ public class SocialNetworkHandler {
                         else if(isUserFound == true && isLoginSuccessful == true)//Username and password correct
                         {
                             JOptionPane.showMessageDialog(null, "Login Successful");
-                            outToClient.writeObject(retrieveUserAccount(fileLocation, 12, typed_Username));
+                            //DataOutputStream outToClient = new DataOutputStream(client.getOutputStream());  //Sets a stream to use to send data to the client
+                            //ObjectOutputStream output = new ObjectOutputStream();
+                            outToClient.writeBoolean(true);
+                            
+                            //outToClient.writeUTF(lineOfText);
+                            //outToClient.writeObject(retrieveUserAccount(fileLocation, 12, typed_Username));
                            //12 - The no of info each user has in programData
+                           
                         }      
                     }catch(Exception e)
                     {

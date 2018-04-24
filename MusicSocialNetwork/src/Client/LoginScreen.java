@@ -229,6 +229,9 @@ class serverCode implements Runnable
             JOptionPane.showConfirmDialog(null, "Attempting to recieve data from server");
             ObjectInputStream inFromServer = new ObjectInputStream(server.getInputStream());
             
+            boolean test = inFromServer.readBoolean();
+            if(test==true)
+                System.out.println("Success");
             try
             {
                 String[] text = (String[]) inFromServer.readObject();

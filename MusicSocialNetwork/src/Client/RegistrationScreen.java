@@ -469,18 +469,46 @@ public class RegistrationScreen extends javax.swing.JFrame {
     private void register_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_ButtonActionPerformed
         boolean anyCheckSelected = false;
         boolean isDobSelected = false; 
+        String genre = "";
         
         if(indie_Check.isSelected() || opera_Check.isSelected() || pop_Check.isSelected() || rock_Check.isSelected() || grime_Check.isSelected() || rb_Check.isSelected() || alternative_Check.isSelected() || classical_Check.isSelected() || punk_Check.isSelected() || techno_Check.isSelected() == true )
         {
             //Runs if any check box is selected
             anyCheckSelected = true;
         }
+        else
+            genre = null;
         
         if(dob_Day_Input.getText().isEmpty() || dob_Year_Input.getText().isEmpty() == true)
         {
             //Runs if either DOB entry is empty
             isDobSelected = true;
         }
+        
+        
+        
+        if(indie_Check.isSelected() == true)
+            genre += "Indie/";
+        if(opera_Check.isSelected() == true)
+            genre += "Opera/";
+        if(pop_Check.isSelected() == true)
+            genre += "Pop/";
+        if(rock_Check.isSelected() == true)
+            genre += "Rock/";
+        if(grime_Check.isSelected() == true)
+            genre += "Grime/";
+        if(rb_Check.isSelected() == true)
+            genre += "RB/";
+        if(alternative_Check.isSelected() == true)
+            genre += "Alternative/";
+        if(classical_Check.isSelected() == true)
+            genre += "Classical/";
+        if(punk_Check.isSelected() == true)
+            genre += "Punk/";
+        if(techno_Check.isSelected() == true)
+            genre += "Techno/";
+        
+        System.out.println(genre);
         
         if(password_Input.getText().isEmpty() || place_Of_Birth_Input.getText().isEmpty() || place_Of_Residence_Input.getText().isEmpty() || anyCheckSelected == false || isDobSelected == false )
         //Put in a check to make sure all fields are in use
