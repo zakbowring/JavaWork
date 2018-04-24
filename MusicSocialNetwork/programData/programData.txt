@@ -1,1 +1,2 @@
 admin,adminpassword,17/06/1998,nottingham,pop/grime/classical/,C:\Users\zakbo\Pictures\cute-cat-picture_1122-449.jpg,test,nofriends,nofriendrequests,nosentfriendrequests,
+Zak,football,12May1889,notts,lincoln,Grime/,C:\Users\zakbo\Pictures\cute-cat-picture_1122-449.jpg,null,noFriends,noSentRequests,noRecievedRequests,

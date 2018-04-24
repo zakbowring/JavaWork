@@ -31,11 +31,11 @@ public class SocialNetworkHandler {
                 String[] inClientArray = (String[]) inFromClient.readObject(); //Stores data from client in an array
                 String userInformationFile = "programData.txt"; //The filename
                 String fileDirectory = "programData\\"; //Where the file is in the directory
-                
+                String fileLocation = fileDirectory + userInformationFile; //Complete file location
+
                 //If statements below show what operations can happen via the client-server link
                 if("loginRequest".equals(inClientArray[0])) //When the user requests to log in
                 {
-                    String fileLocation = fileDirectory + userInformationFile; //Complete file location
                     try{
                         FileReader fileIn = new FileReader(fileLocation);
                         BufferedReader reader = new BufferedReader(fileIn);
@@ -95,14 +95,18 @@ public class SocialNetworkHandler {
                     String writeToFile = "";
                     
                     
-                    for(int i=0;i<arrayLength;i++)
+                    for(int i=1;i<arrayLength;i++)
+                    {
                         writeToFile +=inClientArray[i] + ",";
-                    writeToFile += "\n";
+                    }
                     System.out.println(writeToFile);
+                    
                     try{
-                    PrintWriter writeToTxtFile = new PrintWriter("programData.txt");
-                    writeToTxtFile.println(writeToFile);
-                    writeToTxtFile.close();
+                    FileWriter fstream = new FileWriter(fileLocation, true);
+                    BufferedWriter out = new BufferedWriter(fstream);
+                    out.write(writeToFile);
+                    out.newLine();
+                    out.close();
                     }catch(IOException e)
                     {
                         System.out.println("Error --> "+e);
