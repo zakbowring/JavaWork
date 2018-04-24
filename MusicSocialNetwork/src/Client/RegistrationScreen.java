@@ -1,6 +1,7 @@
-package music.scoial.network; //Allows access to other classes
+package Client; //Allows access to other classes
 
 //Below are the external libraries we have used
+import Client.LoginScreen;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
@@ -493,7 +494,7 @@ public class RegistrationScreen extends javax.swing.JFrame {
         
         try
         {
-        Socket test = new Socket("127.0.0.1", 3000);
+        Socket test = new Socket("127.0.0.1", 9999);
         System.out.println("worked");
         }catch(Exception e){
             System.out.println("error1");

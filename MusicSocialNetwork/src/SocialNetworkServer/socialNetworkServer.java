@@ -10,7 +10,6 @@ import java.net.*; //Allows us to create server
 public class socialNetworkServer {
     public static void main(String arg[])
     {
-        System.out.println("Hello");
         try
         {
         //SNServer == Social Network Server
