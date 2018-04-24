@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Client;
+import java.io.IOException;
 import java.net.*;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
