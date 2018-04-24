@@ -8,6 +8,7 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 import javax.swing.JOptionPane;
+import java.io.PrintWriter;
 /**
  *
  * @author zakbo
@@ -86,6 +87,25 @@ public class SocialNetworkHandler {
                     }catch(Exception e)
                     {
                         System.out.println("Error --1> " + e.getMessage());
+                    }
+                }
+                else if("registrationRequest".equals(inClientArray[0]))
+                {   
+                    int arrayLength = inClientArray.length;
+                    String writeToFile = "";
+                    
+                    
+                    for(int i=0;i<arrayLength;i++)
+                        writeToFile +=inClientArray[i] + ",";
+                    writeToFile += "\n";
+                    
+                    try{
+                    PrintWriter writeToTxtFile = new PrintWriter("programData.txt");
+                    writeToTxtFile.println(writeToFile);
+                    writeToTxtFile.close();
+                    }catch(IOException e)
+                    {
+                        System.out.println("Error --> "+e);
                     }
                 }
                 
