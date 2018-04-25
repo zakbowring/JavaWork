@@ -44,6 +44,7 @@ public class LoginScreen extends javax.swing.JFrame {
         title_Text = new javax.swing.JLabel();
         register_Text = new javax.swing.JLabel();
         register_Button = new javax.swing.JButton();
+        toMain = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +80,13 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
 
+        toMain.setText("To Main");
+        toMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMainActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,11 +110,13 @@ public class LoginScreen extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(title_Text))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
+                        .addContainerGap()
+                        .addComponent(toMain)
+                        .addGap(65, 65, 65)
                         .addComponent(register_Text)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(register_Button)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +136,8 @@ public class LoginScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(register_Text)
-                    .addComponent(register_Button))
+                    .addComponent(register_Button)
+                    .addComponent(toMain))
                 .addContainerGap())
         );
 
@@ -164,6 +175,11 @@ public class LoginScreen extends javax.swing.JFrame {
         this.dispose(); //This disposes the current window
         new RegistrationScreen().setVisible(true); //Turns the registration screen on
     }//GEN-LAST:event_register_ButtonActionPerformed
+
+    private void toMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMainActionPerformed
+        this.dispose();
+        new msnMainScreen().setVisible(true);
+    }//GEN-LAST:event_toMainActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +222,7 @@ public class LoginScreen extends javax.swing.JFrame {
     private javax.swing.JButton register_Button;
     private javax.swing.JLabel register_Text;
     private javax.swing.JLabel title_Text;
+    private javax.swing.JButton toMain;
     private javax.swing.JTextField username_Input_Text;
     private javax.swing.JLabel username_Text;
     // End of variables declaration//GEN-END:variables
