@@ -279,7 +279,7 @@ public class msnMainScreen extends javax.swing.JFrame {
         {
             File selectedFile = fileChooser.getSelectedFile();
             System.out.println(selectedFile.getAbsolutePath());
-            txt_Music.setText(selectedFile.getAbsolutePath());
+            txt_Music.append(selectedFile.getAbsolutePath() + "\n");
         }
     }//GEN-LAST:event_upload_MusicActionPerformed
 
